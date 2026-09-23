@@ -1,3 +1,5 @@
+# Compiles every template/document -- the Makefile overrides `working_dir`
+# per invocation with `-w`, so this default is only used for `make shell`.
 services:
   latex:
     image: texlive/texlive:latest
