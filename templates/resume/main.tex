@@ -1,4 +1,4 @@
-% CV tailored for Research Assistant (AI & Medical Imaging)
+% Academic resume / CV template
 \documentclass[10pt, letterpaper]{article}
 
 \usepackage[
@@ -18,8 +18,8 @@
 \usepackage{fontawesome5}
 \usepackage{amsmath}
 \usepackage[
-    pdftitle={Ali Naderi Parizi - Research Assistant AI Medical Imaging CV},
-    pdfauthor={Ali Naderi Parizi},
+    pdftitle={Your Name - Resume},
+    pdfauthor={Your Name},
     pdfcreator={LaTeX},
     colorlinks=true,
     urlcolor=primaryColor
@@ -53,7 +53,7 @@
 \makeatletter
 \let\ps@customFooterStyle\ps@plain
 \patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small Ali Naderi Parizi - Page \thepage{} of \pageref*{LastPage}}
+    \color{gray}\textit{\small Your Name - Page \thepage{} of \pageref*{LastPage}}
 }{}{}
 \makeatother
 \pagestyle{customFooterStyle}
@@ -123,173 +123,110 @@
 
 \begin{header}
     \fontsize{20 pt}{20 pt}
-    \textbf{Ali Naderi Parizi}
+    \textbf{Your Name}
 
     \vspace{0.12 cm}
     \normalsize
-    Research Assistant in AI \& Medical Imaging
+    Your Professional Title
 
     \vspace{0.22 cm}
     \normalsize
-    \mbox{\hrefWithoutArrow{mailto:me@alinaderiparizi.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}me@alinaderiparizi.com}}%
+    \mbox{\hrefWithoutArrow{mailto:your.email@example.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}your.email@example.com}}%
     \kern 0.22 cm%
-    \mbox{\hrefWithoutArrow{https://alinaderiparizi.com}{{\footnotesize\faGlobe}\hspace*{0.13cm}alinaderiparizi.com}}%
+    \mbox{\hrefWithoutArrow{https://yourwebsite.com}{{\footnotesize\faGlobe}\hspace*{0.13cm}yourwebsite.com}}%
     \kern 0.22 cm%
-    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/ali-naderi-parizi-5a0a74107}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}linkedin.com/in/ali-naderi-parizi}}%
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/yourprofile}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}linkedin.com/in/yourprofile}}%
     \kern 0.22 cm%
-    \mbox{\hrefWithoutArrow{https://github.com/mralinp}{{\footnotesize\faGithub}\hspace*{0.13cm}@mralinp}}%
+    \mbox{\hrefWithoutArrow{https://github.com/yourusername}{{\footnotesize\faGithub}\hspace*{0.13cm}@yourusername}}%
 \end{header}
 
 \vspace{0.12 cm}
 
-\section{Research Profile}
+\section{Profile}
 \begin{onecolentry}
-Motivated machine-learning researcher with an MSc in Artificial Intelligence and Robotics and hands-on experience in \textbf{deep learning for breast cancer classification using 3D Automated Breast Ultrasound (3D-ABUS)}. My work centers on CNN-based medical-image analysis, volumetric data preprocessing, training and evaluation pipelines, and research reproducibility. I have developed ultrasound-focused classification models, published research in breast imaging, and built open-source tooling for medical AI workflows. I am particularly interested in contributing to collaborative research projects in medical ultrasound imaging, cloud-based model training, and interpretable AI for clinical decision support. I also communicate technical findings effectively through teaching, publications, peer review, and project presentations.
-\end{onecolentry}
-
-\section{Research Focus}
-\begin{onecolentry}
-Breast Ultrasound Imaging, Medical Image Analysis, Deep Learning, CNN-Based Classification, 3D ABUS, Cloud GPU Training, AWS, Medical AI Pipelines, Computer Vision, Representation Learning, Reproducible ML Research
+A short (3--5 sentence) summary of who you are, your field, and what you're
+looking for. Lead with your strongest, most relevant qualification, then
+briefly cover your focus areas and what kind of role or collaboration
+you're seeking.
 \end{onecolentry}
 
 \section{Education}
 
-\begin{threecolentry}{\textbf{MSc}}{2020--2023}
-    \textbf{Iran University of Science and Technology (IUST)}, Artificial Intelligence and Robotics
+\begin{threecolentry}{\textbf{Degree}}{Start--End Year}
+    \textbf{University Name}, Field of Study
     \begin{highlights}
-        \item \textbf{Thesis:} Classification of Human Breast Cancer Lesions in 3D Automated Breast Ultrasound (3D-ABUS) Images
-        \item Research focused on deep learning methods for medical image analysis and volumetric biomedical data.
-        \item Relevant coursework: Machine Learning, Deep Learning, Computer Vision, Image Processing, Stochastic Processes
+        \item \textbf{Thesis:} Thesis or dissertation title, if applicable
+        \item One or two sentences on your research focus or specialization.
+        \item Relevant coursework: Course One, Course Two, Course Three
     \end{highlights}
 \end{threecolentry}
 
-\begin{threecolentry}{\textbf{BSc}}{2015--2020}
-    \textbf{Shiraz University}, Computer Engineering
+\begin{threecolentry}{\textbf{Degree}}{Start--End Year}
+    \textbf{University Name}, Field of Study
     \begin{highlights}
-        \item Designed and implemented a System-on-Board capable of running the Linux kernel and processing analog video signals for embedded vision systems.
+        \item A notable project, honor, or achievement from this degree.
     \end{highlights}
 \end{threecolentry}
 
-\section{Medical Imaging Research}
+\section{Publications}
 
-\begin{twocolentry}{2026}
-    \textbf{Ongoing Research Project: Spherical Shape-Based Features for Breast Tumor Classification in 3D-ABUS}\
-    A. Naderiparizi, S. Barekat, E. Kozegar, M. Soryani\\
-    \textit{Iran Image Processing Lab (IIPL)}\\
-    \href{https://alinaderiparizi.com/abus-classification}{alinaderiparizi.com/abus-classification}
+\begin{twocolentry}{Year}
+    \textbf{Title of the Publication}\\
+    Author One, Author Two, Author Three\\
+    \textit{Journal or Conference Name}
     \begin{highlights}
-        \item Developing a theory-driven framework for breast-tumor classification in 3D ABUS using Laplace--Beltrami spectral descriptors and geometric shape features.
-        \item Reproducing strong published baselines under a unified evaluation protocol and studying robustness, interpretability, and clinical relevance of shape-based descriptors.
-        \item Work is ongoing toward a follow-up manuscript and reproducible open-source benchmarking for medical ultrasound research.
+        \item One or two sentences summarizing the contribution and its relevance.
     \end{highlights}
 \end{twocolentry}
 
-\begin{twocolentry}{2025}
-    \textbf{Breast Mass Classification in 3D ABUS based on Laplace-Beltrami Spectra and Dual Path CNN}\\
-    S. Barekat, A. Naderiparizi, E. Kozegar, M. Soryani\\
-    \textit{Expert Systems with Applications}
+\begin{twocolentry}{Year}
+    \textbf{Title of an Open-Source Project or Toolkit}
     \begin{highlights}
-        \item Research on breast-mass classification from 3D Automated Breast Ultrasound images using geometric features and a Dual Path CNN architecture.
-    \end{highlights}
-\end{twocolentry}
-
-\begin{twocolentry}{2024}
-    \textbf{TDSC-ABUS2023 PyTorch Dataset Toolkit}
-    \begin{highlights}
-        \item Developed and released an open-source PyTorch toolkit for the TDSC2023 Grand Challenge on 3D Automated Breast Ultrasound analysis.
-        \item Standardized dataset loading, preprocessing, and training interfaces for classification and segmentation on volumetric breast ultrasound data.
-        \item Published as a GitHub repository and PyPI package: \href{https://github.com/mralinp/tdsc-abus2023-pytorch}{github.com/mralinp/tdsc-abus2023-pytorch}
+        \item What you built, who it's for, and what problem it solves.
+        \item \href{https://github.com/yourusername/project}{github.com/yourusername/project}
     \end{highlights}
 \end{twocolentry}
 
 \section{Technical Skills}
 
 \begin{onecolentry}
-    \textbf{Deep Learning:} PyTorch, TensorFlow, PyTorch Lightning, CNNs, Deep Learning for Medical Imaging, Medical Ultrasound Analysis, YOLO
+    \textbf{Category One:} Skill, Skill, Skill, Skill
 \end{onecolentry}
 \vspace{0.04cm}
 \begin{onecolentry}
-    \textbf{Medical Imaging:} 3D/volumetric image analysis, breast ultrasound (ABUS), image processing, classification, segmentation, computer vision
+    \textbf{Category Two:} Skill, Skill, Skill, Skill
 \end{onecolentry}
 \vspace{0.04cm}
 \begin{onecolentry}
-    \textbf{Cloud \& Training Infrastructure:} AWS, cloud GPU platforms, distributed training workflows, Docker, reproducible ML pipelines
-\end{onecolentry}
-\vspace{0.04cm}
-\begin{onecolentry}
-    \textbf{Programming:} Python, C/C++, Java, C\#, JavaScript/TypeScript
-\end{onecolentry}
-\vspace{0.04cm}
-\begin{onecolentry}
-    \textbf{Scientific Computing:} NumPy, SciPy, Linux, data pipelines
-\end{onecolentry}
-\vspace{0.04cm}
-\begin{onecolentry}
-    \textbf{Communication \& Research:} technical presentation, publications, teaching, peer review, cross-functional collaboration
+    \textbf{Programming:} Language, Language, Language
 \end{onecolentry}
 
-\section{Teaching Experience}
+\section{Experience}
 
-\begin{twocolentry}{Tehran, Iran\\2022}
-    \textbf{Teaching Assistant -- Computer Vision}, Dr. Mohsen Soryani, IUST
+\begin{twocolentry}{City, Country\\Start--End}
+    \textbf{Job Title}, Company Name
     \begin{highlights}
-        \item Assisted graduate students and supervised computer-vision laboratory sessions.
-        \item Introduced a 3D tumor-classification project aligned with my MSc thesis, in which students constructed 3D meshes from tumor segmentations and applied mesh-resolution enhancement techniques.
-        \item Guided students in analyzing fine tumor surface structures such as spiculations and narrow protrusions relevant to malignancy assessment.
+        \item What you did and the impact it had, stated concretely.
+        \item A second accomplishment, ideally with a measurable result.
     \end{highlights}
 \end{twocolentry}
 
-\begin{twocolentry}{Shiraz, Iran\\2017}
-    \textbf{Teaching Assistant -- Data Structures and Algorithm Design}, Dr. Korush Zyarati
+\begin{twocolentry}{City, Country\\Start--End}
+    \textbf{Job Title}, Company Name
     \begin{highlights}
-        \item Designed assignments and projects, graded submissions, and guided students through algorithmic problem solving.
-    \end{highlights}
-\end{twocolentry}
-
-\section{Professional Experience}
-
-\begin{twocolentry}{Tehran, Iran\\2025--Present}
-    \textbf{Iran Tech Innovation Hub}, Chief Technology Officer (AI)
-    \begin{highlights}
-        \item Evaluate and mentor early-stage AI projects and support development of machine-learning systems and AI products.
-    \end{highlights}
-\end{twocolentry}
-
-\begin{twocolentry}{Stockholm, Sweden\\2024--2025}
-    \textbf{CyberDesign Nordic AB}, Software Engineer (AI)
-    \begin{highlights}
-        \item Developed machine-learning systems using mobile sensor data and built APIs and data pipelines supporting model training and deployment.
-    \end{highlights}
-\end{twocolentry}
-
-\begin{twocolentry}{Vancouver, Canada\\2022--2024}
-    \textbf{IDmelon Technologies Inc}, Software Engineer
-    \begin{highlights}
-        \item Developed distributed cloud services, data-processing pipelines, and API architectures.
+        \item What you did and the impact it had, stated concretely.
     \end{highlights}
 \end{twocolentry}
 
 \section{References}
 
 \begin{twocolentry}{
-    Iran University of Science and Technology, Tehran\\
-    Email: \href{mailto:soryani@iust.ac.ir}{soryani@iust.ac.ir}
+    Institution Name, City\\
+    Email: \href{mailto:reference@example.com}{reference@example.com}
 }
-    \textbf{Dr. Mohsen Soryani}
+    \textbf{Dr. Reference Name}
     \begin{highlights}
-        \item Primary Thesis Advisor, MSc in Artificial Intelligence
-    \end{highlights}
-\end{twocolentry}
-
-\vspace{0.12cm}
-
-\begin{twocolentry}{
-    Guilan University, Tehran\\
-    Email: \href{mailto:kozegar@guilan.ac.ir}{kozegar@guilan.ac.ir}
-}
-    \textbf{Dr. Ehsan Kozegar}
-    \begin{highlights}
-        \item Second Thesis Supervisor, MSc in Artificial Intelligence
+        \item How this person knows your work (e.g. thesis advisor, manager).
     \end{highlights}
 \end{twocolentry}
 
