@@ -1,0 +1,6 @@
+services:
+  latex:
+    image: texlive/texlive:latest
+    working_dir: /work
+    volumes:
+      - .:/work

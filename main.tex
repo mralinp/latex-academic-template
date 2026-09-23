@@ -1,0 +1,296 @@
+% CV tailored for Research Assistant (AI & Medical Imaging)
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot,
+    top=1.7cm,
+    bottom=1.7cm,
+    left=1.8cm,
+    right=1.8cm,
+    footskip=0.8cm
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Ali Naderi Parizi - Research Assistant AI Medical Imaging CV},
+    pdfauthor={Ali Naderi Parizi},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage{url}
+\urlstyle{same}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \IfFileExists{glyphtounicode.tex}{\input{glyphtounicode}\pdfgentounicode=1}{}
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro}
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Ali Naderi Parizi - Page \thepage{} of \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{
+    \needspace{4\baselineskip}
+    \Large\color{primaryColor}
+}{
+}{
+}{
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[]
+\titlespacing{\section}{-1pt}{0.25cm}{0.15cm}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.06cm,
+        parsep=0.05cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4cm
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.15cm}{0.15cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.3cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1cm, \fill, 4.3cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep
+    \centering\color{primaryColor}\linespread{1.35}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+\begin{document}
+
+\begin{header}
+    \fontsize{20 pt}{20 pt}
+    \textbf{Ali Naderi Parizi}
+
+    \vspace{0.12 cm}
+    \normalsize
+    Research Assistant in AI \& Medical Imaging
+
+    \vspace{0.22 cm}
+    \normalsize
+    \mbox{\hrefWithoutArrow{mailto:me@alinaderiparizi.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}me@alinaderiparizi.com}}%
+    \kern 0.22 cm%
+    \mbox{\hrefWithoutArrow{https://alinaderiparizi.com}{{\footnotesize\faGlobe}\hspace*{0.13cm}alinaderiparizi.com}}%
+    \kern 0.22 cm%
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/ali-naderi-parizi-5a0a74107}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}linkedin.com/in/ali-naderi-parizi}}%
+    \kern 0.22 cm%
+    \mbox{\hrefWithoutArrow{https://github.com/mralinp}{{\footnotesize\faGithub}\hspace*{0.13cm}@mralinp}}%
+\end{header}
+
+\vspace{0.12 cm}
+
+\section{Research Profile}
+\begin{onecolentry}
+Motivated machine-learning researcher with an MSc in Artificial Intelligence and Robotics and hands-on experience in \textbf{deep learning for breast cancer classification using 3D Automated Breast Ultrasound (3D-ABUS)}. My work centers on CNN-based medical-image analysis, volumetric data preprocessing, training and evaluation pipelines, and research reproducibility. I have developed ultrasound-focused classification models, published research in breast imaging, and built open-source tooling for medical AI workflows. I am particularly interested in contributing to collaborative research projects in medical ultrasound imaging, cloud-based model training, and interpretable AI for clinical decision support. I also communicate technical findings effectively through teaching, publications, peer review, and project presentations.
+\end{onecolentry}
+
+\section{Research Focus}
+\begin{onecolentry}
+Breast Ultrasound Imaging, Medical Image Analysis, Deep Learning, CNN-Based Classification, 3D ABUS, Cloud GPU Training, AWS, Medical AI Pipelines, Computer Vision, Representation Learning, Reproducible ML Research
+\end{onecolentry}
+
+\section{Education}
+
+\begin{threecolentry}{\textbf{MSc}}{2020--2023}
+    \textbf{Iran University of Science and Technology (IUST)}, Artificial Intelligence and Robotics
+    \begin{highlights}
+        \item \textbf{Thesis:} Classification of Human Breast Cancer Lesions in 3D Automated Breast Ultrasound (3D-ABUS) Images
+        \item Research focused on deep learning methods for medical image analysis and volumetric biomedical data.
+        \item Relevant coursework: Machine Learning, Deep Learning, Computer Vision, Image Processing, Stochastic Processes
+    \end{highlights}
+\end{threecolentry}
+
+\begin{threecolentry}{\textbf{BSc}}{2015--2020}
+    \textbf{Shiraz University}, Computer Engineering
+    \begin{highlights}
+        \item Designed and implemented a System-on-Board capable of running the Linux kernel and processing analog video signals for embedded vision systems.
+    \end{highlights}
+\end{threecolentry}
+
+\section{Medical Imaging Research}
+
+\begin{twocolentry}{2026}
+    \textbf{Ongoing Research Project: Spherical Shape-Based Features for Breast Tumor Classification in 3D-ABUS}\
+    A. Naderiparizi, S. Barekat, E. Kozegar, M. Soryani\\
+    \textit{Iran Image Processing Lab (IIPL)}\\
+    \href{https://alinaderiparizi.com/abus-classification}{alinaderiparizi.com/abus-classification}
+    \begin{highlights}
+        \item Developing a theory-driven framework for breast-tumor classification in 3D ABUS using Laplace--Beltrami spectral descriptors and geometric shape features.
+        \item Reproducing strong published baselines under a unified evaluation protocol and studying robustness, interpretability, and clinical relevance of shape-based descriptors.
+        \item Work is ongoing toward a follow-up manuscript and reproducible open-source benchmarking for medical ultrasound research.
+    \end{highlights}
+\end{twocolentry}
+
+\begin{twocolentry}{2025}
+    \textbf{Breast Mass Classification in 3D ABUS based on Laplace-Beltrami Spectra and Dual Path CNN}\\
+    S. Barekat, A. Naderiparizi, E. Kozegar, M. Soryani\\
+    \textit{Expert Systems with Applications}
+    \begin{highlights}
+        \item Research on breast-mass classification from 3D Automated Breast Ultrasound images using geometric features and a Dual Path CNN architecture.
+    \end{highlights}
+\end{twocolentry}
+
+\begin{twocolentry}{2024}
+    \textbf{TDSC-ABUS2023 PyTorch Dataset Toolkit}
+    \begin{highlights}
+        \item Developed and released an open-source PyTorch toolkit for the TDSC2023 Grand Challenge on 3D Automated Breast Ultrasound analysis.
+        \item Standardized dataset loading, preprocessing, and training interfaces for classification and segmentation on volumetric breast ultrasound data.
+        \item Published as a GitHub repository and PyPI package: \href{https://github.com/mralinp/tdsc-abus2023-pytorch}{github.com/mralinp/tdsc-abus2023-pytorch}
+    \end{highlights}
+\end{twocolentry}
+
+\section{Technical Skills}
+
+\begin{onecolentry}
+    \textbf{Deep Learning:} PyTorch, TensorFlow, PyTorch Lightning, CNNs, Deep Learning for Medical Imaging, Medical Ultrasound Analysis, YOLO
+\end{onecolentry}
+\vspace{0.04cm}
+\begin{onecolentry}
+    \textbf{Medical Imaging:} 3D/volumetric image analysis, breast ultrasound (ABUS), image processing, classification, segmentation, computer vision
+\end{onecolentry}
+\vspace{0.04cm}
+\begin{onecolentry}
+    \textbf{Cloud \& Training Infrastructure:} AWS, cloud GPU platforms, distributed training workflows, Docker, reproducible ML pipelines
+\end{onecolentry}
+\vspace{0.04cm}
+\begin{onecolentry}
+    \textbf{Programming:} Python, C/C++, Java, C\#, JavaScript/TypeScript
+\end{onecolentry}
+\vspace{0.04cm}
+\begin{onecolentry}
+    \textbf{Scientific Computing:} NumPy, SciPy, Linux, data pipelines
+\end{onecolentry}
+\vspace{0.04cm}
+\begin{onecolentry}
+    \textbf{Communication \& Research:} technical presentation, publications, teaching, peer review, cross-functional collaboration
+\end{onecolentry}
+
+\section{Teaching Experience}
+
+\begin{twocolentry}{Tehran, Iran\\2022}
+    \textbf{Teaching Assistant -- Computer Vision}, Dr. Mohsen Soryani, IUST
+    \begin{highlights}
+        \item Assisted graduate students and supervised computer-vision laboratory sessions.
+        \item Introduced a 3D tumor-classification project aligned with my MSc thesis, in which students constructed 3D meshes from tumor segmentations and applied mesh-resolution enhancement techniques.
+        \item Guided students in analyzing fine tumor surface structures such as spiculations and narrow protrusions relevant to malignancy assessment.
+    \end{highlights}
+\end{twocolentry}
+
+\begin{twocolentry}{Shiraz, Iran\\2017}
+    \textbf{Teaching Assistant -- Data Structures and Algorithm Design}, Dr. Korush Zyarati
+    \begin{highlights}
+        \item Designed assignments and projects, graded submissions, and guided students through algorithmic problem solving.
+    \end{highlights}
+\end{twocolentry}
+
+\section{Professional Experience}
+
+\begin{twocolentry}{Tehran, Iran\\2025--Present}
+    \textbf{Iran Tech Innovation Hub}, Chief Technology Officer (AI)
+    \begin{highlights}
+        \item Evaluate and mentor early-stage AI projects and support development of machine-learning systems and AI products.
+    \end{highlights}
+\end{twocolentry}
+
+\begin{twocolentry}{Stockholm, Sweden\\2024--2025}
+    \textbf{CyberDesign Nordic AB}, Software Engineer (AI)
+    \begin{highlights}
+        \item Developed machine-learning systems using mobile sensor data and built APIs and data pipelines supporting model training and deployment.
+    \end{highlights}
+\end{twocolentry}
+
+\begin{twocolentry}{Vancouver, Canada\\2022--2024}
+    \textbf{IDmelon Technologies Inc}, Software Engineer
+    \begin{highlights}
+        \item Developed distributed cloud services, data-processing pipelines, and API architectures.
+    \end{highlights}
+\end{twocolentry}
+
+\section{References}
+
+\begin{twocolentry}{
+    Iran University of Science and Technology, Tehran\\
+    Email: \href{mailto:soryani@iust.ac.ir}{soryani@iust.ac.ir}
+}
+    \textbf{Dr. Mohsen Soryani}
+    \begin{highlights}
+        \item Primary Thesis Advisor, MSc in Artificial Intelligence
+    \end{highlights}
+\end{twocolentry}
+
+\vspace{0.12cm}
+
+\begin{twocolentry}{
+    Guilan University, Tehran\\
+    Email: \href{mailto:kozegar@guilan.ac.ir}{kozegar@guilan.ac.ir}
+}
+    \textbf{Dr. Ehsan Kozegar}
+    \begin{highlights}
+        \item Second Thesis Supervisor, MSc in Artificial Intelligence
+    \end{highlights}
+\end{twocolentry}
+
+\end{document}
