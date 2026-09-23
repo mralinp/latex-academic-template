@@ -97,9 +97,25 @@ PAGE_HTML = """<!doctype html>
   header {{ padding: 3rem 1.5rem 1.5rem; text-align: center; }}
   header h1 {{ margin: 0 0 0.5rem; font-size: 2rem; }}
   header p {{ margin: 0 auto; max-width: 40rem; color: var(--muted); }}
-  header .links {{ margin-top: 1rem; }}
-  header .links a {{ color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 0.5rem; }}
-  header .links a:hover {{ text-decoration: underline; }}
+  header .links {{ margin-top: 1.25rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }}
+  header .links a.text-link {{ color: var(--accent); text-decoration: none; font-weight: 600; align-self: center; }}
+  header .links a.text-link:hover {{ text-decoration: underline; }}
+  .getting-started {{
+    max-width: 44rem; margin: 0 auto 2.5rem; padding: 1.25rem 1.5rem;
+    background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem;
+  }}
+  .getting-started h2 {{ margin: 0 0 0.9rem; font-size: 1.1rem; text-align: center; }}
+  .getting-started ol {{ margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }}
+  .getting-started li {{ font-size: 0.9rem; line-height: 1.5; }}
+  .getting-started code {{
+    background: var(--tag-bg); color: var(--fg); padding: 0.1rem 0.35rem;
+    border-radius: 0.3rem; font-size: 0.85em;
+  }}
+  .getting-started pre {{
+    background: var(--bg); border: 1px solid var(--border); border-radius: 0.5rem;
+    padding: 0.6rem 0.75rem; overflow-x: auto; margin: 0.35rem 0 0;
+  }}
+  .getting-started pre code {{ background: none; padding: 0; font-size: 0.82rem; }}
   main {{
     max-width: 68rem; margin: 0 auto; padding: 1rem 1.5rem 4rem;
     display: grid; gap: 1.25rem;
@@ -141,10 +157,24 @@ PAGE_HTML = """<!doctype html>
   <h1>LaTeX Academic Template</h1>
   <p>Dockerized LaTeX templates you can compile with one command -- no local LaTeX install required. Browse the available templates below.</p>
   <div class="links">
-    <a href="{repo}">GitHub repository</a>
-    <a href="{repo}#adding-a-new-template">Add your own template</a>
+    <a class="btn primary" href="{repo}/generate">Use this template</a>
+    <a class="text-link" href="{repo}">GitHub repository</a>
+    <a class="text-link" href="{repo}#adding-a-new-template">Add your own template</a>
   </div>
 </header>
+<section class="getting-started">
+  <h2>Getting started</h2>
+  <ol>
+    <li>Make sure <a href="https://docs.docker.com/get-docker/">Docker</a> is installed and running -- that's the only requirement, no LaTeX install needed.</li>
+    <li>Click <strong>Use this template</strong> above to create your own copy on GitHub (or <a href="{repo}/fork">fork</a> if you plan to contribute a template back).</li>
+    <li>Clone your new repo and build a template:
+      <pre><code>git clone git@github.com:&lt;you&gt;/&lt;your-repo&gt;.git
+cd &lt;your-repo&gt;
+make list
+make build TEMPLATE=resume</code></pre>
+    </li>
+  </ol>
+</section>
 <main>
 {cards}
 </main>

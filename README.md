@@ -17,16 +17,30 @@ host machine only needs Docker and `make`.
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) (with the Compose plugin,
-  bundled with Docker Desktop)
+  bundled with Docker Desktop) -- installed and running
 - `make` (preinstalled on macOS and Linux)
 
 That's it -- no LaTeX, no Python packages, nothing else to install.
 
+## Get your own copy
+
+This repo is a [GitHub template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template),
+so you don't work directly in it -- you create your own copy first:
+
+- **[Use this template](https://github.com/mralinp/latex-academic-template/generate)**
+  (recommended) -- creates a brand-new, independent repository under your own
+  account, with no shared history. Use this for your own resume, papers, or
+  any document you'll own going forward.
+- **[Fork](https://github.com/mralinp/latex-academic-template/fork)** instead
+  if you plan to contribute a new template back to this repo via pull request.
+- Or just `git clone` this repo directly if you only want to try it out
+  locally without pushing anywhere.
+
 ## Quick start
 
 ```bash
-git clone git@github.com:mralinp/latex-academic-template.git
-cd latex-academic-template
+git clone git@github.com:<you>/<your-new-repo>.git
+cd <your-new-repo>
 
 make list                     # see available templates
 make build TEMPLATE=resume    # compiles templates/resume/main.tex
