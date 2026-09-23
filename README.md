@@ -36,6 +36,14 @@ You can also run it non-interactively:
 ./create-latex-app.sh my-paper --git https://git.overleaf.com/xxxxxxxxxxxx
 ```
 
+To pass those same flags through the one-liner without saving the script
+first, add an extra placeholder argument right after it -- `bash -c "..."`
+treats the *first* word after the command string as `$0`, not `$1`:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/mralinp/latex-academic-template/main/create-latex-app.sh)" _ my-cv --template resume
+```
+
 Run `./create-latex-app.sh --help` for all options (`--engine`,
 `--shell-escape`, `--no-build`, ...).
 
