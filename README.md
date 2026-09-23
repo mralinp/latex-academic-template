@@ -1,42 +1,54 @@
 # LaTeX Academic Template
 
 Dockerized LaTeX templates you can compile with one command. No local LaTeX
-install, no TeX Live setup, no fighting package managers -- just Docker and
-`make`.
+install, no TeX Live setup, no fighting package managers -- just Docker.
 
 **[Browse the template gallery](https://alinaderiparizi.com/latex-academic-template/)**
 
-## Why
+## Start a new project (recommended)
 
-Installing a full LaTeX distribution locally is slow, huge (multiple GB),
-and drifts out of sync between machines. This repo instead pulls the
-official [`texlive/texlive`](https://hub.docker.com/r/texlive/texlive)
-Docker image and compiles everything inside a disposable container. Your
-host machine only needs Docker and `make`.
+One command, no cloning required. Works like `npx create-react-app`, but for
+LaTeX:
 
-## Prerequisites
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/mralinp/latex-academic-template/main/create-latex-app.sh)"
+```
 
-- [Docker](https://docs.docker.com/get-docker/) (with the Compose plugin,
-  bundled with Docker Desktop) -- installed and running
-- `make` (preinstalled on macOS and Linux)
+It walks you through a short wizard -- project name, then either:
 
-That's it -- no LaTeX, no Python packages, nothing else to install.
+- **pick a template** from the gallery (resume, IEEE Transactions, Springer LNCS, ...),
+- **import a local `.zip`** (e.g. a project exported from Overleaf), or
+- **import from a git URL** (e.g. an Overleaf project's git remote)
 
-## Get your own copy
+-- and hands you back a standalone folder with a working `Makefile`,
+`docker-compose.yml`, and its own fresh git repo, ready to `make build`. It
+even offers to run that first build for you.
 
-This repo is a [GitHub template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template),
-so you don't work directly in it -- you create your own copy first:
+The only requirement is [Docker](https://docs.docker.com/get-docker/),
+installed and running. Everything else -- git, LaTeX -- is either already on
+your machine or pulled automatically inside the container.
+
+You can also run it non-interactively:
+
+```bash
+./create-latex-app.sh my-cv --template resume
+./create-latex-app.sh my-paper --zip ~/Downloads/overleaf-project.zip
+./create-latex-app.sh my-paper --git https://git.overleaf.com/xxxxxxxxxxxx
+```
+
+Run `./create-latex-app.sh --help` for all options (`--engine`,
+`--shell-escape`, `--no-build`, ...).
+
+## Get the whole template gallery instead
+
+If you'd rather have the full multi-template repo -- e.g. to keep several
+documents together, or to contribute a new template back -- this repo is
+also a [GitHub template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template):
 
 - **[Use this template](https://github.com/mralinp/latex-academic-template/generate)**
-  (recommended) -- creates a brand-new, independent repository under your own
-  account, with no shared history. Use this for your own resume, papers, or
-  any document you'll own going forward.
+  creates a brand-new, independent repository under your own account.
 - **[Fork](https://github.com/mralinp/latex-academic-template/fork)** instead
-  if you plan to contribute a new template back to this repo via pull request.
-- Or just `git clone` this repo directly if you only want to try it out
-  locally without pushing anywhere.
-
-## Quick start
+  if you plan to contribute a template back via pull request.
 
 ```bash
 git clone git@github.com:<you>/<your-new-repo>.git
@@ -55,6 +67,7 @@ build after that is fast, since the image is cached locally.
 ```text
 .
 ├── Makefile                  # build system -- see `make help`
+├── create-latex-app.sh       # standalone-project scaffolding wizard
 ├── docker-compose.yml        # defines the `latex` service/container
 ├── templates/                # one directory per template
 │   ├── resume/
@@ -62,6 +75,7 @@ build after that is fast, since the image is cached locally.
 │   │   └── config.mk         # per-template metadata + build settings
 │   ├── ieee-transactions/
 │   └── springer-lncs/
+├── scaffold/                  # minimal Makefile/README dropped into new projects
 ├── documents/                 # your real documents, created with `make new`
 ├── scripts/
 │   └── build_pages.py        # generates the GitHub Pages gallery
@@ -86,6 +100,7 @@ main ones:
 
 | Command | What it does |
 | --- | --- |
+| `make create` | Scaffold a brand-new standalone project (the `create-latex-app` wizard) |
 | `make list` | List all available templates |
 | `make build TEMPLATE=resume` | Compile a template to `templates/resume/main.pdf` |
 | `make build TEMPLATE=resume ENGINE=xelatex` | Compile with a specific engine (`pdflatex`, `xelatex`, `lualatex`) |
@@ -109,18 +124,20 @@ can be overridden ad hoc on the command line, e.g.
 
 ## Starting a real document
 
-Templates under `templates/` are meant to stay generic starting points. When
-you want to actually write something, scaffold a working copy instead of
-editing the template in place:
+Templates under `templates/` are meant to stay generic starting points. Don't
+edit them in place -- scaffold a working copy instead, one of two ways:
 
-```bash
-make new NAME=job-application-cv TEMPLATE=resume
-make compile FILE=documents/job-application-cv/main.tex
-```
+- **`create-latex-app`** (see above) -- for a standalone project with its own
+  folder and git history, independent of this repo. This is what most people
+  want.
+- **`make new NAME=job-application-cv TEMPLATE=resume`** -- if you're already
+  working inside a clone of this repo and want to keep the document alongside
+  it, under `documents/`, sharing this repo's git history:
 
-This copies the template into `documents/job-application-cv/`, which you're
-free to edit, version, or gitignore as you see fit -- it's your content, not
-part of the template gallery.
+  ```bash
+  make new NAME=job-application-cv TEMPLATE=resume
+  make compile FILE=documents/job-application-cv/main.tex
+  ```
 
 ## Adding a new template
 

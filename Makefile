@@ -45,7 +45,7 @@ endif
 LATEXMK_FLAGS := $(ENGINE_FLAG) -interaction=nonstopmode -halt-on-error -file-line-error -synctex=1 $(SHELL_ESCAPE_FLAG)
 
 .PHONY: help list pull require-template build build-all compile watch new add-template \
-        clean clean-all shell lint wordcount pages
+        clean clean-all shell lint wordcount pages create
 
 .DEFAULT_GOAL := help
 
@@ -61,6 +61,9 @@ list: ## List all available templates
 
 pull: ## Pull/update the LaTeX Docker image
 	$(COMPOSE) pull
+
+create: ## Scaffold a brand-new standalone project (template, .zip, or git import): make create
+	@bash create-latex-app.sh
 
 # Aborts the build (at parse time, before any container runs) if TEMPLATE is
 # missing or unknown. Used as a prerequisite by targets that need TEMPLATE.

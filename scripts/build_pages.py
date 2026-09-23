@@ -97,9 +97,6 @@ PAGE_HTML = """<!doctype html>
   header {{ padding: 3rem 1.5rem 1.5rem; text-align: center; }}
   header h1 {{ margin: 0 0 0.5rem; font-size: 2rem; }}
   header p {{ margin: 0 auto; max-width: 40rem; color: var(--muted); }}
-  header .links {{ margin-top: 1.25rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }}
-  header .links a.text-link {{ color: var(--accent); text-decoration: none; font-weight: 600; align-self: center; }}
-  header .links a.text-link:hover {{ text-decoration: underline; }}
   .getting-started {{
     max-width: 44rem; margin: 0 auto 2.5rem; padding: 1.25rem 1.5rem;
     background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem;
@@ -116,6 +113,25 @@ PAGE_HTML = """<!doctype html>
     padding: 0.6rem 0.75rem; overflow-x: auto; margin: 0.35rem 0 0;
   }}
   .getting-started pre code {{ background: none; padding: 0; font-size: 0.82rem; }}
+  .getting-started .lede {{ font-size: 0.9rem; line-height: 1.5; color: var(--muted); text-align: center; margin: 0 0 0.9rem; }}
+  .getting-started .lede code {{
+    background: var(--tag-bg); color: var(--fg); padding: 0.1rem 0.35rem;
+    border-radius: 0.3rem; font-size: 0.85em;
+  }}
+  .cmd-row {{ display: flex; align-items: stretch; gap: 0.5rem; margin-bottom: 0.9rem; }}
+  .cmd-row pre {{
+    flex: 1; margin: 0; background: var(--bg); border: 1px solid var(--border); border-radius: 0.5rem;
+    padding: 0.7rem 0.85rem; display: flex; align-items: center; min-width: 0;
+  }}
+  .cmd-row pre code {{ background: none; padding: 0; font-size: 0.78rem; white-space: pre-wrap; word-break: break-all; }}
+  .cmd-row .copy-btn {{ flex-shrink: 0; align-self: stretch; padding: 0 1rem; }}
+  @media (max-width: 30rem) {{
+    .cmd-row {{ flex-direction: column; }}
+    .cmd-row .copy-btn {{ align-self: stretch; padding: 0.5rem 1rem; }}
+  }}
+  .secondary-links {{ text-align: center; font-size: 0.85rem; color: var(--muted); margin: 0; }}
+  .secondary-links a {{ color: var(--accent); text-decoration: none; font-weight: 600; }}
+  .secondary-links a:hover {{ text-decoration: underline; }}
   main {{
     max-width: 68rem; margin: 0 auto; padding: 1rem 1.5rem 4rem;
     display: grid; gap: 1.25rem;
@@ -156,25 +172,34 @@ PAGE_HTML = """<!doctype html>
 <header>
   <h1>LaTeX Academic Template</h1>
   <p>Dockerized LaTeX templates you can compile with one command -- no local LaTeX install required. Browse the available templates below.</p>
-  <div class="links">
-    <a class="btn primary" href="{repo}/generate">Use this template</a>
-    <a class="text-link" href="{repo}">GitHub repository</a>
-    <a class="text-link" href="{repo}#adding-a-new-template">Add your own template</a>
-  </div>
 </header>
 <section class="getting-started">
-  <h2>Getting started</h2>
-  <ol>
-    <li>Make sure <a href="https://docs.docker.com/get-docker/">Docker</a> is installed and running -- that's the only requirement, no LaTeX install needed.</li>
-    <li>Click <strong>Use this template</strong> above to create your own copy on GitHub (or <a href="{repo}/fork">fork</a> if you plan to contribute a template back).</li>
-    <li>Clone your new repo and build a template:
-      <pre><code>git clone git@github.com:&lt;you&gt;/&lt;your-repo&gt;.git
-cd &lt;your-repo&gt;
-make list
-make build TEMPLATE=resume</code></pre>
-    </li>
-  </ol>
+  <h2>Start a new project</h2>
+  <p class="lede">One command, no cloning required -- like <code>npx create-react-app</code>, but for LaTeX. Just needs <a href="https://docs.docker.com/get-docker/">Docker</a> installed and running.</p>
+  <div class="cmd-row">
+    <pre id="one-liner"><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/mralinp/latex-academic-template/main/create-latex-app.sh)"</code></pre>
+    <button type="button" class="btn primary copy-btn" data-target="one-liner">Copy</button>
+  </div>
+  <p class="lede">A short wizard then asks you to <strong>pick a template</strong>, <strong>import a local .zip</strong> (e.g. from Overleaf), or <strong>import a git URL</strong> -- and hands you a ready-to-build project with its own git repo.</p>
+  <p class="secondary-links">
+    Want the whole gallery repo instead?
+    <a href="{repo}/generate">Use this template</a> ·
+    <a href="{repo}/fork">Fork</a> ·
+    <a href="{repo}">View source</a>
+  </p>
 </section>
+<script>
+document.querySelectorAll(".copy-btn").forEach(function (btn) {{
+  btn.addEventListener("click", function () {{
+    var text = document.getElementById(btn.dataset.target).innerText;
+    navigator.clipboard.writeText(text).then(function () {{
+      var original = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(function () {{ btn.textContent = original; }}, 1500);
+    }});
+  }});
+}});
+</script>
 <main>
 {cards}
 </main>
