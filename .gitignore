@@ -19,6 +19,7 @@
 *.toc
 *.vrb
 *.xdv
+*-eps-converted-to.pdf
 
 # Generated GitHub Pages site (built by scripts/build_pages.py / CI)
 /site/

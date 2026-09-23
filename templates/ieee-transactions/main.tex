@@ -1,67 +1,107 @@
-\documentclass[journal]{IEEEtran}
-
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
+\documentclass[journal,twoside,web]{ieeecolor}
+\usepackage{tmi}
 \usepackage{cite}
-\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{textcomp}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\markboth{\journalname, VOL. XX, NO. XX, XXXX 20XX}
+{Author \MakeLowercase{\textit{et al.}}: Paper Title Goes Here}
 
 \begin{document}
 
 \title{Paper Title Goes Here}
 
-\author{
-    First~Author,~\IEEEmembership{Member,~IEEE,}
-    Second~Author,~\IEEEmembership{Senior~Member,~IEEE}
-    \thanks{First Author is with the Department of Computer Science, University Name, City, Country (e-mail: first.author@example.com).}
-    \thanks{Second Author is with the Department of Electrical Engineering, University Name, City, Country.}
-    \thanks{Manuscript received Month Day, Year; revised Month Day, Year.}
+\author{First~A.~Author,~\IEEEmembership{Member,~IEEE,}
+        Second~B.~Author,
+        and~Third~C.~Author,~\IEEEmembership{Fellow,~IEEE}
+\thanks{This paragraph of the first footnote will contain the date on which
+    you submitted your paper for review. It will also contain support
+    information, including sponsor and financial support acknowledgment.
+    For example, ``This work was supported in part by the U.S. Department
+    of Commerce under Grant BS123456.''}
+\thanks{First A. Author is with the Department of Electrical Engineering,
+    University Name, City, Country (e-mail: first.author@example.com).}
+\thanks{Second B. Author and Third C. Author are with the Department of
+    Computer Science, University Name, City, Country.}
 }
-
-\markboth{IEEE Transactions on Example Systems,~Vol.~XX, No.~X, Month~Year}%
-{Author \MakeLowercase{\textit{et al.}}: Paper Title Goes Here}
 
 \maketitle
 
 \begin{abstract}
-This document is a starting point for an IEEE Transactions/Journal submission. Replace this abstract with a concise summary (150--250 words) of the problem, approach, and key results of the work.
+This document is a starting point for an IEEE Transactions on Medical
+Imaging (TMI) submission, using the official \texttt{ieeecolor}/\texttt{tmi}
+class files. Replace this abstract with a concise summary (150--250 words)
+of the problem, approach, and key results of the work. Do not cite
+references in the abstract.
 \end{abstract}
 
 \begin{IEEEkeywords}
-keyword one, keyword two, keyword three, keyword four
+keyword one, keyword two, keyword three, keyword four, keyword five
 \end{IEEEkeywords}
 
 \section{Introduction}
-\IEEEPARstart{T}{his} section introduces the problem, motivates why it matters, summarizes prior approaches and their limitations, and states the paper's contributions as a short itemized list.
+\label{sec:introduction}
+\IEEEPARstart{T}{his} section introduces the problem, motivates why it
+matters, summarizes prior approaches and their limitations, and states the
+paper's contributions as a short itemized list.
 
 \section{Related Work}
-Summarize and position the work relative to the most relevant prior literature, organized by theme rather than chronologically.
+\label{sec:related}
+Summarize and position the work relative to the most relevant prior
+literature, organized by theme rather than chronologically~\cite{example2024}.
 
 \section{Methodology}
-Describe the proposed method, model, or system. Use subsections to separate distinct components.
+\label{sec:methodology}
+Describe the proposed method, model, or system. Use subsections to separate
+distinct components.
 
 \subsection{Problem Formulation}
-State assumptions and formal notation here.
+State assumptions and formal notation here. For example, a quantity of
+interest might be defined as
+\[
+f(x) = \sum_{i=1}^{N} w_i \, \phi_i(x)
+\]
+where $\phi_i$ are basis functions and $w_i$ their weights.
 
 \subsection{Proposed Approach}
 Describe the core technical contribution here.
 
-\section{Experiments}
-Describe the experimental setup: datasets, baselines, evaluation metrics, and implementation details needed for reproducibility.
+\section{Experiments and Results}
+\label{sec:experiments}
+
+\subsection{Dataset and Setup}
+Describe the dataset, evaluation protocol, and implementation details needed
+for reproducibility.
 
 \subsection{Results}
-Present quantitative results, referencing tables and figures as needed.
+Table~\ref{tab:results} summarizes example results.
+
+\begin{table}[!t]
+\caption{Example Results Table}
+\label{tab:results}
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Method} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} \\
+\midrule
+Baseline & 0.80 & 0.78 & 0.81 \\
+Proposed & \textbf{0.90} & \textbf{0.89} & \textbf{0.91} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Conclusion}
-Summarize findings, discuss limitations, and outline directions for future work.
+\label{sec:conclusion}
+Summarize findings, discuss limitations, and outline directions for future
+work.
 
-\begin{thebibliography}{9}
-
-\bibitem{ref1}
-A. Author and B. Author, ``Title of the referenced paper,'' \emph{Journal Name}, vol. 1, no. 1, pp. 1--10, Year.
-
-\bibitem{ref2}
-C. Author, D. Author, and E. Author, ``Title of another referenced paper,'' in \emph{Proc. Conference Name}, Year, pp. 1--6.
-
-\end{thebibliography}
+\bibliographystyle{ieeetr}
+\bibliography{references}
 
 \end{document}
