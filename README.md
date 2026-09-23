@@ -4,7 +4,7 @@ Dockerized LaTeX templates you can compile with one command. No local LaTeX
 install, no TeX Live setup, no fighting package managers -- just Docker and
 `make`.
 
-**[Browse the template gallery](https://mralinp.github.io/latex-academic-template/)**
+**[Browse the template gallery](https://alinaderiparizi.com/latex-academic-template/)**
 
 ## Why
 
@@ -38,7 +38,7 @@ build after that is fast, since the image is cached locally.
 
 ## Directory structure
 
-```
+```text
 .
 ├── Makefile                  # build system -- see `make help`
 ├── docker-compose.yml        # defines the `latex` service/container
@@ -145,8 +145,9 @@ with `make pages`, or let CI do it: `.github/workflows/pages.yml` runs on
 every push to `main` and deploys `./site` via GitHub's native Pages-from-Actions
 flow.
 
-One-time setup: in the repo's **Settings → Pages**, set **Source** to
-**GitHub Actions**.
+One-time setup (already done for this repo): in **Settings → Pages**, set
+**Source** to **GitHub Actions**. Note that GitHub Pages requires the
+repository to be public on the free plan.
 
 ## Continuous integration
 
